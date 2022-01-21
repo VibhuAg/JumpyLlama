@@ -62,11 +62,9 @@ class GameScene : SKScene {
         
     }
     func pushObstacle(xLocation : CGFloat) {
-        print("Jaron is the Jewish Version of Albert Einstein")
         let pint = Int.random(in: lowerBound...upperBound) + 70
         let obstacle = SKShapeNode(rectOf: CGSize(width : Int(size.width / 5), height : /*lowerBound + */pint))
         obstacle.position = CGPoint(x: xLocation, y: 0)
-        //
         lowerBound += 10
         upperBound += 10
         obstacle.physicsBody = SKPhysicsBody(rectangleOf: obstacle.frame.size)
@@ -77,7 +75,6 @@ class GameScene : SKScene {
     }
     func popObstacle(){
         if !intersects(obstacles[0]) {
-            print("Let's simliate")
             obstacles.remove(at : 0)
         }
     }
